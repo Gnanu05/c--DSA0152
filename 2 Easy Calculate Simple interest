@@ -1,0 +1,35 @@
+#include <stdio.h>
+
+float calculateSimpleInterest(float principal, float rate, float time) {
+    return (principal * rate * time) / 100;
+}
+
+int main() {
+    float principal, time, interest;
+    char gender, seniorCitizen;
+
+    printf("Enter the principal amount: ");
+    scanf("%f", &principal);
+
+    printf("Enter the no of years: ");
+    scanf("%f", &time);
+
+    printf("Gender (m/f): ");
+    scanf(" %c", &gender);
+
+    printf("Is customer senior citizen (y/n): ");
+    scanf(" %c", &seniorCitizen);
+
+    float rate;
+    if (seniorCitizen == 'y' || seniorCitizen == 'Y') {
+        rate = 12.0;
+    } else {
+        rate = 10.0;
+    }
+
+    interest = calculateSimpleInterest(principal, rate, time);
+
+    printf("The simple interest is: %.2f\n", interest);
+
+    return 0;
+}
